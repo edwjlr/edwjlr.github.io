@@ -17,8 +17,17 @@ A responsive and modern portfolio website showcasing my skills, projects, and ac
 - **JavaScript**: Interactive features (smooth scrolling).
 - **GitHub Pages**: Free hosting for the website.
 
-## Project Structure
-portfolio/ ├── index.html # Main HTML file ├── style.css # CSS for styling ├── script.js # JavaScript (optional, for interactivity) ├── images/ # Folder for images └── README.md # Documentation
+## Project Structure:
+```
+edwjlr.github.io/
+│
+├── index.html       - Main HTML file for website structure and content
+├── style.css        - CSS file for styling and responsive design
+├── script.js        - JavaScript file for interactivity (optional)
+├── images/          - Folder containing images for the portfolio
+├── README.md        - Documentation file with project details
+└── LICENSE          - License file specifying project permissions
+```
 
 ## Installation
 To run this project locally:
