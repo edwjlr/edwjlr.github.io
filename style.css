@@ -1,0 +1,77 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(90deg, #007BFF, #0056b3);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: white;
+    color: #007BFF;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Section Styles */
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+.project-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px auto;
+    max-width: 300px;
+    text-align: left;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+}
+
+/* Contact Form */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form input, form textarea, form button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background: #f4f4f4;
+    padding: 1px 0;
+    text-align: center;
+}
