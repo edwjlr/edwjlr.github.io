@@ -5,10 +5,14 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
 }
 
-h1, h2, h3 {
-    text-align: center;
+/* Dark Mode General */
+body.dark-mode {
+    background-color: #121212;
+    color: #f4f4f4;
 }
 
 /* Hero Section */
@@ -19,6 +23,12 @@ h1, h2, h3 {
     padding: 30px 20px;
 }
 
+body.dark-mode .hero {
+    background: linear-gradient(90deg, #444, #222);
+    color: #ffffff;
+}
+
+/* Hero Button */
 .hero .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -27,6 +37,12 @@ h1, h2, h3 {
     color: #007BFF;
     text-decoration: none;
     border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .hero .btn {
+    background: #444;
+    color: #ffffff;
 }
 
 /* Section Styles */
@@ -35,17 +51,20 @@ section {
     text-align: center;
 }
 
+/* Project Card */
 .project-card {
     border: 1px solid #ddd;
     padding: 10px;
     margin: 10px auto;
     max-width: 300px;
     text-align: left;
+    background: #ffffff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.project-card img {
-    width: 100%;
-    height: auto;
+body.dark-mode .project-card {
+    background: #222;
+    border: 1px solid #444;
 }
 
 /* Contact Form */
@@ -61,17 +80,28 @@ form input, form textarea, form button {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-form button {
-    background: #007BFF;
-    color: white;
-    cursor: pointer;
+body.dark-mode form input,
+body.dark-mode form textarea,
+body.dark-mode form button {
+    background-color: #333;
+    color: #f4f4f4;
+    border: 1px solid #555;
 }
 
 /* Footer */
 footer {
     background: #f4f4f4;
-    padding: 1px 0;
+    padding: 10px 0;
     text-align: center;
+    color: #333;
+}
+
+body.dark-mode footer {
+    background: #333;
+    color: #f4f4f4;
 }

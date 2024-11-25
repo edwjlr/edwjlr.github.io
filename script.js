@@ -6,3 +6,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+// Select the toggle button
+const toggleButton = document.getElementById('dark-mode-toggle');
+
+// Check local storage for saved preference
+if (localStorage.getItem('dark-mode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+}
+
+// Toggle dark mode and save preference
+toggleButton.addEventListener('click', () => {
+    const isDarkMode = document.body.classList.toggle('dark-mode');
+    localStorage.setItem('dark-mode', isDarkMode ? 'enabled' : 'disabled');
+});
