@@ -1,17 +1,50 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     color: #333;
-    background-color: #ffffff;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Dark Mode General */
+/* Dark Mode */
 body.dark-mode {
     background-color: #121212;
+    color: #f4f4f4;
+}
+
+/* Navbar */
+.navbar {
+    background: #007BFF;
+    padding: 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
     color: #f4f4f4;
 }
 
@@ -20,15 +53,9 @@ body.dark-mode {
     background: linear-gradient(90deg, #007BFF, #0056b3);
     color: white;
     text-align: center;
-    padding: 30px 20px;
+    padding: 50px 20px;
 }
 
-body.dark-mode .hero {
-    background: linear-gradient(90deg, #444, #222);
-    color: #ffffff;
-}
-
-/* Hero Button */
 .hero .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -37,71 +64,116 @@ body.dark-mode .hero {
     color: #007BFF;
     text-decoration: none;
     border-radius: 5px;
+    font-weight: bold;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body.dark-mode .hero .btn {
-    background: #444;
-    color: #ffffff;
+.hero .btn:hover {
+    background: #f4f4f4;
+    color: #0056b3;
 }
 
-/* Section Styles */
-section {
+/* About Section */
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
-    text-align: center;
 }
 
-/* Project Card */
+.about-container img.profile-pic {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-container ul li {
+    margin: 5px 0;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
 .project-card {
     border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px auto;
-    max-width: 300px;
-    text-align: left;
-    background: #ffffff;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-body.dark-mode .project-card {
-    background: #222;
-    border: 1px solid #444;
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 /* Contact Form */
 form {
     max-width: 400px;
-    margin: 0 auto;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 form input, form textarea, form button {
-    display: block;
     width: 100%;
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #fff;
-    color: #333;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: border-color 0.3s ease;
 }
 
-body.dark-mode form input,
-body.dark-mode form textarea,
-body.dark-mode form button {
-    background-color: #333;
-    color: #f4f4f4;
-    border: 1px solid #555;
+form input:focus, form textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+form button {
+    background: #007BFF;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+form button:hover {
+    background: #0056b3;
 }
 
 /* Footer */
 footer {
-    background: #f4f4f4;
-    padding: 10px 0;
-    text-align: center;
-    color: #333;
-}
-
-body.dark-mode footer {
     background: #333;
     color: #f4f4f4;
+    text-align: center;
+    padding: 10px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
 }
