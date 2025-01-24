@@ -68,7 +68,43 @@ input:checked + .slider:before {
     transform: translateX(20px);
 }
 
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text for contrast */
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
 
+.dark-mode a {
+    color: #1e90ff; /* Light blue links */
+    text-decoration: none;
+}
+
+.dark-mode a:hover {
+    color: #63b3ed; /* Brighter blue on hover */
+}
+
+.dark-mode .navbar ul li a {
+    color: #f0f0f0; /* Navbar links */
+}
+
+.dark-mode .skills-grid .skill i {
+    filter: brightness(1.5); /* Brighten skill icons */
+}
+
+.dark-mode .project-card {
+    background-color: #1c1c1c; /* Dark card background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.dark-mode .project-card a {
+    color: #61dafb; /* Light blue links for projects */
+}
+
+.dark-mode footer {
+    background-color: #1c1c1c; /* Dark footer background */
+    color: #ffffff; /* Light footer text */
+}
 
 /* Navbar */
 .navbar {
@@ -93,20 +129,6 @@ input:checked + .slider:before {
     height: 20px;
     margin-right: 5px;
     vertical-align: middle;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #121212;
-    color: #f4f4f4;
-}
-
-body.dark-mode .navbar {
-    background-color: #333;
-}
-
-body.dark-mode .slider {
-    background-color: #444;
 }
 
 .navbar ul li {
