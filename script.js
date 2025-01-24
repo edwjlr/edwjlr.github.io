@@ -13,19 +13,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Dark Mode Toggle
 document.addEventListener('DOMContentLoaded', () => {
-    // Select the toggle button
-    const toggleButton = document.getElementById('dark-mode-toggle');
+    const toggleCheckbox = document.getElementById('dark-mode-checkbox');
+    const darkModeLabel = document.getElementById('dark-mode-label');
 
-    // Check local storage for saved preference
+    // Check local storage for saved preference and apply it
     if (localStorage.getItem('dark-mode') === 'enabled') {
         document.body.classList.add('dark-mode');
+        toggleCheckbox.checked = true;
+        darkModeLabel.textContent = 'Dark Mode'; // Reflect the current mode
+    } else {
+        darkModeLabel.textContent = 'Light Mode'; // Default mode
     }
 
     // Add event listener to toggle dark mode
-    if (toggleButton) {
-        toggleButton.addEventListener('click', () => {
-            const isDarkMode = document.body.classList.toggle('dark-mode');
-            localStorage.setItem('dark-mode', isDarkMode ? 'enabled' : 'disabled');
-        });
-    }
+    toggleCheckbox.addEventListener('change', () => {
+        const isDarkMode = toggleCheckbox.checked;
+        if (isDarkMode) {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('dark-mode', 'enabled');
+            darkModeLabel.textContent = 'Dark Mode'; // When dark mode is active
+        } else {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('dark-mode', 'disabled');
+            darkModeLabel.textContent = 'Light Mode'; // When light mode is active
+        }
+    });
 });
