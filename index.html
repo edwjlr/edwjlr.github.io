@@ -47,116 +47,16 @@
 
     <section id="skills">
         <h2>Skills</h2>
-        <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 20px; text-align: center;">
-            <div class="skill">
-                <i class="fab fa-html5" style="font-size: 2em; color: #e34f26;"></i>
-                <p>HTML</p>
-            </div>
-            <div class="skill">
-                <i class="fab fa-css3-alt" style="font-size: 2em; color: #1572b6;"></i>
-                <p>CSS</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-code" style="font-size: 2em; color: #00599C;"></i>
-                <p>C++</p>
-            </div>
-            <div class="skill">
-                <i class="fab fa-js" style="font-size: 2em; color: #f7df1e;"></i>
-                <p>JavaScript</p>
-            </div>
-            <div class="skill">
-                <i class="fab fa-python" style="font-size: 2em; color: #3776ab;"></i>
-                <p>Python</p>
-            </div>
-            <div class="skill">
-                <i class="fab fa-react" style="font-size: 2em; color: #61dafb;"></i>
-                <p>React</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-code-branch" style="font-size: 2em; color: #6e5494;"></i>
-                <p>Git</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-database" style="font-size: 2em; color: #f29111;"></i>
-                <p>SQL</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-server" style="font-size: 2em; color: #f29111;"></i>
-                <p>Node.js</p>
-            </div>
-            <div class="skill">
-                <i class="fab fa-aws" style="font-size: 2em; color: #232f3e;"></i>
-                <p>AWS</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-network-wired" style="font-size: 2em; color: #6c757d;"></i>
-                <p>Networking</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-laptop-code" style="font-size: 2em; color: #007bff;"></i>
-                <p>Linux</p>
-            </div>
-            <div class="skill">
-                <i class="fab fa-docker" style="font-size: 2em; color: #2496ed;"></i>
-                <p>Docker</p>
-            </div>
-            <div class="skill">
-                <i class="fab fa-python" style="font-size: 2em; color: #3776ab;"></i>
-                <p>Flask</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-microchip" style="font-size: 2em; color: #f89820;"></i>
-                <p>CUDA</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-brain" style="font-size: 2em; color: #f37a20;"></i>
-                <p>TensorFlow</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-camera" style="font-size: 2em; color: #cc0000;"></i>
-                <p>OpenCV</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-chart-line" style="font-size: 2em; color: #4caf50;"></i>
-                <p>NumPy</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-table" style="font-size: 2em; color: #00758f;"></i>
-                <p>pandas</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-chart-pie" style="font-size: 2em; color: #6a1b9a;"></i>
-                <p>Matplotlib</p>
-            </div>
-            <div class="skill">
-                <i class="fab fa-docker" style="font-size: 2em; color: #2496ed;"></i>
-                <p>Docker</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-database" style="font-size: 2em; color: #4db33d;"></i>
-                <p>MongoDB</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-database" style="font-size: 2em; color: #f29111;"></i>
-                <p>MySQL</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-database" style="font-size: 2em; color: #336791;"></i>
-                <p>PostgreSQL</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-bolt" style="font-size: 2em; color: #f39c12;"></i>
-                <p>GPU Acceleration</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-project-diagram" style="font-size: 2em; color: #3498db;"></i>
-                <p>Parallel Computing</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-network-wired" style="font-size: 2em; color: #6c757d;"></i>
-                <p>REST API Development</p>
-            </div>
+        <div class="skill-categories">
+            <button class="skill-btn active" data-category="all">All Skills</button>
+            <button class="skill-btn" data-category="languages">Programming Languages</button>
+            <button class="skill-btn" data-category="frameworks">Frameworks & Libraries</button>
+            <button class="skill-btn" data-category="tools">Tools & Platforms</button>
+            <button class="skill-btn" data-category="specialized">Specialized Skills</button>
+            <button class="skill-btn" data-category="cloud">Cloud</button>
+            <button class="skill-btn" data-category="machinelearning">Machine Learning</button>
         </div>
+        <div id="skills-display" class="skills-grid"></div>
     </section>
 
     <section id="projects">
@@ -171,10 +71,9 @@
             </div>
             <div class="project-card">
                 <img src="project2.jpg" alt="Project 2 Screenshot">
-                <h3>Project 2: Todo App</h3>
-                <p>A simple and intuitive todo app with React and Firebase for real-time data sync.</p>
-                <a href="https://github.com/edwjlr/todo-app" target="_blank">GitHub Repo</a>
-                <a href="https://todo.edwjlr.com" target="_blank">Live Demo</a>
+                <h3>Project 2: Facial Recognition Attendance System</h3>
+                <p>The Classroom Attendance System is a facial recognition-based attendance tracking system designed to automate the process of taking attendance in classrooms. Using OpenCV for facial recognition and React for the admin page, this system allows instructors to easily monitor and track student attendance.</p>
+                <a href="https://github.com/edwjlr/classroom-attendance-system" target="_blank">GitHub Repo</a>
             </div>
         </div>
     </section>
