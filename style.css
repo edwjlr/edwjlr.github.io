@@ -118,7 +118,8 @@ body.dark-mode {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
 }
 
 .navbar ul {
@@ -137,16 +138,20 @@ body.dark-mode {
 }
 
 .navbar ul li a {
+    display: inline-block;
     color: white;
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
     transition: color 0.3s;
     white-space: nowrap;
+    transition: transform 0.3s ease, color 0.3s ease;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Persistent text depth */
 }
 
 .navbar ul li a:hover {
-    color: #f4f4f4;
+    color: #0056b3;
+    transform: scale(1.1) rotate(3deg); /* Scale and slight rotation */
 }
 
 /* Desktop-Specific Styles */
@@ -184,27 +189,109 @@ body.dark-mode {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(90deg, #007BFF, #0056b3);
+    background: linear-gradient(90deg, #007BFF, #0056b3, #003f7f);
+    background-size: 400% 400%;
     color: white;
     text-align: center;
-    padding: 50px 20px;
+    padding: 80px 20px;
+    animation: gradientShift 10s ease infinite; /* Smooth gradient animation */
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2), transparent 70%);
+    opacity: 0.7;
+    animation: pulse 4s infinite; /* Subtle glowing pulse */
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    animation: fadeIn 1.2s ease;
+    animation-delay: 0.2s;
+    z-index: 2;
+    position: relative;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease;
+    animation-delay: 0.4s;
+    z-index: 2;
+    position: relative;
 }
 
 .hero .btn {
     display: inline-block;
-    padding: 10px 20px;
-    margin-top: 10px;
+    padding: 15px 30px;
     background: white;
     color: #007BFF;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 30px;
     font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1.8s ease;
+    animation-delay: 0.6s;
+    position: relative;
+    z-index: 2;
 }
 
 .hero .btn:hover {
     background: #f4f4f4;
     color: #0056b3;
+    transform: translateY(-4px) scale(1.05); /* Hover effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
 }
 
 /* About Section */
