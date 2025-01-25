@@ -108,12 +108,13 @@ body.dark-mode {
 
 /* Navbar */
 .navbar {
-    background: #007BFF;
+    background: linear-gradient(90deg, #007BFF, #0056b3);
     padding: 10px;
     text-align: center;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar ul {
@@ -135,13 +136,46 @@ body.dark-mode {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
     transition: color 0.3s;
     white-space: nowrap;
 }
 
 .navbar ul li a:hover {
     color: #f4f4f4;
+}
+
+/* Desktop-Specific Styles */
+@media (min-width: 1024px) {
+    /* Navbar */
+    .navbar ul {
+        flex-wrap: nowrap; /* Prevent wrapping */
+        justify-content: center; /* Center-align for desktop */
+        gap: 60px; /* Increase spacing for desktop */
+    }
+
+    .navbar ul li {
+        flex: 0; /* Prevent scaling */
+    }
+
+    .navbar ul li a {
+        font-size: 16px; /* Larger font size for desktop */
+    }
+
+    /* Contact Form */
+    form {
+        max-width: 500px; /* Wider form for desktop */
+        padding: 30px; /* Increase padding for desktop */
+    }
+
+    form input, form textarea {
+        width: calc(100% - 30px); /* Match padding */
+        padding: 15px; /* Larger padding for desktop */
+    }
+
+    form button {
+        padding: 15px; /* Match button padding */
+    }
 }
 
 /* Hero Section */
