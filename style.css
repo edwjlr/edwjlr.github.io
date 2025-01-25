@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -93,12 +93,16 @@ body.dark-mode {
 }
 
 .dark-mode .project-card {
-    background-color: #1c1c1c;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #2a2a2a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .dark-mode .project-card a {
     color: #61dafb;
+}
+
+.dark-mode .project-card h3, .dark-mode .project-card p {
+    color: white; /* Ensures text in project cards is white in dark mode */
 }
 
 .dark-mode footer {
@@ -236,85 +240,107 @@ body.dark-mode {
 /* Skill Categories */
 .skill-categories {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .skill-btn {
-    padding: 10px 20px;
+    padding: 12px 25px;
     margin: 5px;
     background: #007BFF;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .skill-btn:hover {
     background: #0056b3;
+    transform: translateY(-3px);
 }
 
 .skill-btn.active {
     background: #0056b3;
+    transform: scale(1.05);
 }
 
 /* Skills Display */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 20px;
     text-align: center;
+    padding: 30px;
 }
 
 .skill i {
-    font-size: 2em;
+    font-size: 3em;
+    margin-bottom: 10px;
+    transition: transform 0.2s ease;
+}
+
+.skill:hover i {
+    transform: scale(1.2);
 }
 
 /* Projects Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    padding: 60px;
 }
 
 .project-card {
     border: 1px solid #ddd;
-    padding: 20px;
+    padding: 25px;
     background: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .project-card img {
     max-width: 100%;
-    border-radius: 10px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
     margin-bottom: 10px;
+    color: #333;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #555;
 }
 
 /* Contact Form */
 form {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
+    max-width: 450px;
+    margin: 60px auto;
+    padding: 40px;
     background: white;
     border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 form input, form textarea {
     width: calc(100% - 20px);
-    margin: 10px 0;
-    padding: 10px;
+    margin: 15px 0;
+    padding: 15px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px;
     box-sizing: border-box;
     transition: border-color 0.3s ease;
 }
@@ -326,13 +352,13 @@ form input:focus, form textarea:focus {
 
 form button {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     margin-top: 10px;
     background: #007BFF;
     color: white;
     font-weight: bold;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
